@@ -1,11 +1,17 @@
 package chess;
 
-public abstract class Piece {
+public abstract class Piece 
+{
 	private int xPosition;
 	private int yPosition;
 	private String color;
 	
-	private void setColor(String color) throws IllegalArgumentException
+	public Piece(String color)
+	{
+		setColor(color);
+	} // Piece()
+	
+	final void setColor(String color) throws IllegalArgumentException
 	{
 		if(color.equals("black") || color.equals("white"))
 			this.color = color;
@@ -18,10 +24,20 @@ public abstract class Piece {
 		return this.color;
 	} // getColor()
 	
+	protected void setXPosition(int xPosition)
+	{
+		this.xPosition = xPosition;
+	} // setXPosition()
+	
 	public int getXPosition()
 	{
 		return xPosition;
 	} // getXPosition()
+	
+	protected void setYPosition(int yPosition)
+	{
+		this.yPosition = yPosition;
+	} // setYPosition()
 	
 	public int getYPosition()
 	{
